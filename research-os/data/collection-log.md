@@ -8,14 +8,14 @@
 
 ```yaml
 signal:
-  title: Stable capacity may become more scarce
-  source: Energy Research OS v0.1 seed
-  date: 2026-06-05
+  title: 稳定容量可能变得更稀缺
+  source: Energy Research OS v0.1 种子记录
+  date: '2026-06-05'
   topic: power_market
   layer: dispatch
-  fact: Higher renewable penetration increases the need for reliable capacity and balancing.
+  fact: 新能源渗透率提高会增加对可靠容量和调节能力的需求。
 strength: medium
 confidence: medium
-impact: Supports the hypothesis that stable capacity and dispatch capability may become control points.
-next_action: Link to insights/examples/stable-capacity-becomes-scarce.md and hypotheses/hypothesis-ledger.md.
+impact: 支持稳定容量和调度能力可能成为控制点的假设。
+next_action: 链接到 insights/examples/stable-capacity-becomes-scarce.md 和 hypotheses/hypothesis-ledger.md。
 ```

@@ -7,7 +7,7 @@
 ## 数据流
 
 ```text
-sources.md -> collection-log.md -> metrics/ 或 insights/ 或 hypotheses/
+sources.md -> collection-log.md -> metrics/ 或 insights/ 或 hypotheses/ 或 control-rights/
 ```
 
 ## 采集对象
@@ -34,3 +34,4 @@ sources.md -> collection-log.md -> metrics/ 或 insights/ 或 hypotheses/
 4. 能量化的信号进入 `metrics/`。
 5. 能改变判断的信号进入 `insights/`。
 6. 能验证或推翻假设的信号进入 `hypotheses/`。
+7. 能指向控制点、瓶颈或定价权变化的信号进入 `control-rights/`。

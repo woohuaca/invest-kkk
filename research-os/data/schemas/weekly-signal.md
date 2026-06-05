@@ -29,7 +29,7 @@ next_action:
 - `signal.layer`：`generation / transmission / distribution / dispatch / EMS / VPP / operations_knowledge`。
 - `signal.fact`：事实本身，不写推断。
 - `strength`：`weak / medium / strong`。
-- `confidence`：`low / medium / high` 或百分比。
+- `confidence`：`low / medium / high`。
 - `impact`：该事实可能影响的瓶颈、控制点、指标或假设。
 - `next_action`：下一步进入 `metrics/`、`insights/`、`hypotheses/` 或 `control-rights/`。
 
@@ -37,14 +37,14 @@ next_action:
 
 ```yaml
 signal:
-  title: Dispatch reform increases value of stable capacity
-  source: Power market reform document
-  date: 2026-06-05
+  title: 调度改革提升稳定容量价值
+  source: 电力市场改革文件
+  date: '2026-06-05'
   topic: power_market
   layer: dispatch
-  fact: Market rules increasingly price reliability and balancing capacity.
+  fact: 市场规则开始更明确地为可靠性和调节能力定价。
 strength: medium
 confidence: medium
-impact: Stable capacity and dispatch capability may become more visible control points.
-next_action: Update metrics/power-layer-metrics.md and insights/examples/stable-capacity-becomes-scarce.md.
+impact: 稳定容量和调度能力可能成为更可见的控制点。
+next_action: 更新 metrics/power-layer-metrics.md 和 insights/examples/stable-capacity-becomes-scarce.md。
 ```
