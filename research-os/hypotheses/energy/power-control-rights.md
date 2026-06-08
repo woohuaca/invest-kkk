@@ -21,6 +21,6 @@
 
 ## 下一步观察
 
-- 更新 `hypothesis-ledger.md`。
+- 更新 `hypotheses/hypothesis-ledger.md`。
 - 将强假设转成 `insights/` 卡片。
-- 将可评分假设输入 `control-rights/control-point-scorecard.md`。
+- 在控制权分析模块建立后，将可评分假设输入 `control-rights/control-point-scorecard.md`。
