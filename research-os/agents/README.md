@@ -2,13 +2,15 @@
 
 ## 结论
 
-`agents/` 用来定义可重复执行的研究任务。Agent 的职责不是直接给出股票建议，而是稳定地产出信号、假设状态和控制点候选，供 `insights/` 和 `decisions/` 使用。
+`agents/` 用来定义可重复执行的研究任务。Agent 的职责不是直接给出股票建议，而是稳定地产出信号、指标判断、假设状态和控制点候选，供 `data/`、`metrics/`、`insights/`、`hypotheses/` 和 `control-rights/` 使用。
 
 ## Agent 流程
 
 ```text
-Industry Observer -> Hypothesis Tracker -> Control Point Finder -> Insight Cards -> Decisions
+Industry Observer -> data/ -> metrics/ -> insights/ -> hypotheses/ -> control-rights/
 ```
+
+Agent 不直接输出股票推荐、交易动作或仓位建议。
 
 ## Agent 列表
 
@@ -25,10 +27,17 @@ Industry Observer -> Hypothesis Tracker -> Control Point Finder -> Insight Cards
 - 必须记录置信度。
 - 必须写出下一步动作。
 - 如果信息不足，输出 `confidence: low`，不要强行下结论。
-- 所有重要输出应能进入 `insights/` 的洞察卡片，或进入 `industries/energy/hypotheses.md` 的假设列表。
+- 所有重要输出应能进入 `insights/` 的洞察卡片，或进入 `hypotheses/hypothesis-ledger.md` 的假设台账。
 
 ## 输出关系
 
 - `Industry Observer` 发现外部变化。
 - `Hypothesis Tracker` 判断这些变化验证、削弱还是推翻现有假设。
 - `Control Point Finder` 判断变化是否说明新的瓶颈、控制点或组织依赖正在形成。
+
+## 输出落点
+
+- `Industry Observer` 的 weekly signal 写入 `data/collection-log.md`。
+- `Hypothesis Tracker` 的状态更新写入 `hypotheses/hypothesis-ledger.md`。
+- `Control Point Finder` 的候选控制点写入 `control-rights/candidates.md`。
+- 能改变判断的输出应同步形成 `insights/` 洞察卡片。

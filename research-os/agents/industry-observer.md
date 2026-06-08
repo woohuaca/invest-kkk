@@ -67,23 +67,30 @@ next_action:
 
 ```yaml
 signal:
-  title: Capacity market reform increases value of stable power
+  title: 容量市场改革提升稳定电源价值
   date: 2026-06-05
-  source: Power market policy update
-  topic: power_market
-  layer: dispatch
-  summary: Market rules place more explicit value on reliable capacity and system balancing.
+  source: 电力市场政策更新
+  topic: 电力市场
+  layer: 调度
+  summary: 市场规则开始更明确地为可靠容量和系统平衡能力定价。
 strength: medium
 confidence: medium
-impact: Stable capacity and dispatch capability may become more important bottlenecks.
+impact: 稳定容量和调度能力可能成为更重要的瓶颈。
 evidence:
-  - Capacity payment mechanism is being discussed or expanded.
-  - Renewable penetration increases balancing needs.
+  - 容量补偿机制正在讨论或扩大。
+  - 新能源渗透率提升增加系统平衡需求。
 counter_evidence:
-  - Storage cost decline may reduce scarcity of stable capacity.
-  - Policy may cap returns.
-next_action: Update related insight card and track capacity market implementation details.
+  - 储能成本下降可能削弱稳定容量稀缺性。
+  - 政策可能限制收益率。
+next_action: 更新 `insights/` 相关洞察卡片，并在 `hypotheses/hypothesis-ledger.md` 跟踪容量市场落地证据。
 ```
+
+## 输出落点
+
+- weekly signal 写入 `data/collection-log.md`。
+- 可比较指标写入或更新 `metrics/calculation-log.md`。
+- 改变判断的信号写入 `insights/`。
+- 验证或削弱假设的信号写入 `hypotheses/hypothesis-ledger.md`。
 
 ## 禁止事项
 

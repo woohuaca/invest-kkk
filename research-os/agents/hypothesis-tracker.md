@@ -13,16 +13,15 @@ Hypothesis Tracker 维护研究系统中的核心判断，持续记录哪些假�
 - 哪些判断被削弱？
 - 哪些判断被推翻？
 - 哪些判断需要提高或降低置信度？
-- 哪些判断需要转成洞察卡片、行业假设或决策复盘？
+- 哪些判断需要转成洞察卡片、假设台账更新或控制点候选？
 
 ## 输入
 
-- `industries/energy/hypotheses.md`
-- `insights/README.md` 定义的洞察卡片。
-- `observations/` 中的事实记录。
-- `decisions/` 中的投资动作和复盘条件。
-- `Industry Observer` 输出的行业信号。
-- `Control Point Finder` 输出的控制点候选。
+- `hypotheses/hypothesis-ledger.md`
+- `hypotheses/energy/power-control-rights.md`
+- `insights/` 中的洞察卡片。
+- `data/collection-log.md` 中的 weekly signal。
+- `control-rights/candidates.md` 中的控制点候选。
 
 ## 处理流程
 
@@ -30,7 +29,7 @@ Hypothesis Tracker 维护研究系统中的核心判断，持续记录哪些假�
 2. 为每条假设匹配新增证据和反证。
 3. 判断状态：`active / verified / weakened / invalidated / resolved`。
 4. 更新置信度，并记录变化原因。
-5. 给出下一步动作：保留、上调、下调、重写、归档或进入决策复盘。
+5. 给出下一步动作：保留、上调、下调、重写、归档、更新洞察卡片或进入控制点候选。
 
 ## 输出格式
 
@@ -64,7 +63,7 @@ next_action:
 - `verified_by`：支持或验证假设的证据。
 - `weakened_by`：削弱假设的证据。
 - `invalidated_by`：推翻假设的证据。
-- `decision_impact`：对评分、观察名单、仓位或风险判断的影响。
+- `decision_impact`：对研究判断、评分维度、观察优先级或风险判断的影响，不表示交易或仓位动作。
 - `next_action`：下一步动作。
 
 ## 示例
@@ -72,22 +71,28 @@ next_action:
 ```yaml
 hypothesis:
   id: energy-001
-  title: Stable Capacity Becomes Scarce
-  statement: Stable power capacity will become more valuable as renewable penetration rises.
-  industry: Energy
-  scope: Bottleneck / Control Point
+  title: 稳定容量变得稀缺
+  statement: 随着新能源渗透率提升，稳定电力容量的系统价值会上升。
+  industry: 能源
+  scope: 瓶颈 / 控制点
 status: active
 previous_confidence: 70%
 new_confidence: 75%
 verified_by:
-  - Renewable penetration continues to rise.
-  - Dispatch complexity increases during peak demand windows.
+  - 新能源渗透率持续提升。
+  - 高峰负荷窗口的调度复杂度上升。
 weakened_by:
-  - Storage utilization improves faster than expected.
+  - 储能利用率提升速度快于预期。
 invalidated_by: []
-decision_impact: Increase research weight on dispatchable capacity, EMS, and VPP control layers.
-next_action: Keep active and update related insight card.
+decision_impact: 提高可调度容量、EMS 和虚拟电厂控制层的研究优先级。
+next_action: 保持 active，并更新相关 `insights/` 洞察卡片。
 ```
+
+## 输出落点
+
+- 假设状态写入 `hypotheses/hypothesis-ledger.md`。
+- 电力控制权相关假设写入 `hypotheses/energy/power-control-rights.md`。
+- 被验证、削弱或推翻的重要假设，应更新对应 `insights/` 洞察卡片。
 
 ## 禁止事项
 
