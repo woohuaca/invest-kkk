@@ -71,7 +71,7 @@ Write:
 ## 数据流
 
 ```text
-sources.md -> collection-log.md -> metrics/ 或 insights/ 或 hypotheses/
+sources.md -> collection-log.md -> metrics/ 或 insights/ 或 hypotheses/ 或 control-rights/
 ```
 
 ## 采集对象
@@ -98,6 +98,7 @@ sources.md -> collection-log.md -> metrics/ 或 insights/ 或 hypotheses/
 4. 能量化的信号进入 `metrics/`。
 5. 能改变判断的信号进入 `insights/`。
 6. 能验证或推翻假设的信号进入 `hypotheses/`。
+7. 能指向控制点的信号进入 `control-rights/`。
 ```
 
 - [ ] **Step 3: Create `research-os/data/sources.md`**
@@ -115,11 +116,11 @@ Write:
 
 | 数据源 | 关注内容 | 可能影响层级 | 输出去向 |
 | --- | --- | --- | --- |
-| 国家能源局 | 政策、装机、用电量、电力市场改革 | generation / dispatch / market | data / metrics / hypotheses |
-| 国家电网 | 电网投资、调度、并网、负荷、特高压 | transmission / distribution / dispatch | data / metrics / control-rights |
+| 国家能源局 | 政策、装机、用电量、电力市场改革 | generation / dispatch / VPP | metrics / hypotheses / control-rights |
+| 国家电网 | 电网投资、调度、并网、负荷、特高压 | transmission / distribution / dispatch | metrics / control-rights |
 | 电力市场文件 | 现货、容量、辅助服务、需求响应 | dispatch / EMS / VPP | insights / hypotheses / control-rights |
 | 储能 | 装机、利用率、价格、商业模式 | generation / dispatch / VPP | metrics / insights |
-| 数据中心 | 负荷增长、能耗、并网、可靠性要求 | distribution / dispatch / EMS | data / metrics / control-rights |
+| 数据中心 | 负荷增长、能耗、并网、可靠性要求 | distribution / dispatch / EMS | metrics / control-rights |
 
 ## 采集原则
 
@@ -166,7 +167,7 @@ next_action:
 - `signal.layer`：`generation / transmission / distribution / dispatch / EMS / VPP / operations_knowledge`。
 - `signal.fact`：事实本身，不写推断。
 - `strength`：`weak / medium / strong`。
-- `confidence`：`low / medium / high` 或百分比。
+- `confidence`：`low / medium / high`。
 - `impact`：该事实可能影响的瓶颈、控制点、指标或假设。
 - `next_action`：下一步进入 `metrics/`、`insights/`、`hypotheses/` 或 `control-rights/`。
 
@@ -174,16 +175,16 @@ next_action:
 
 ```yaml
 signal:
-  title: Dispatch reform increases value of stable capacity
-  source: Power market reform document
-  date: 2026-06-05
+  title: 调度改革提升稳定容量价值
+  source: 电力市场改革文件
+  date: '2026-06-05'
   topic: power_market
   layer: dispatch
-  fact: Market rules increasingly price reliability and balancing capacity.
+  fact: 市场规则正在更明确地定价可靠性和系统平衡能力。
 strength: medium
 confidence: medium
-impact: Stable capacity and dispatch capability may become more visible control points.
-next_action: Update metrics/power-layer-metrics.md and insights/examples/stable-capacity-becomes-scarce.md.
+impact: 稳定容量和调度能力可能成为更显性的控制点。
+next_action: 更新 metrics/power-layer-metrics.md 和 insights/examples/stable-capacity-becomes-scarce.md。
 ```
 ```
 
@@ -202,16 +203,16 @@ Write:
 
 ```yaml
 signal:
-  title: Stable capacity may become more scarce
-  source: Energy Research OS v0.1 seed
-  date: 2026-06-05
+  title: 稳定容量可能变得更稀缺
+  source: Energy Research OS v0.1 种子记录
+  date: '2026-06-05'
   topic: power_market
   layer: dispatch
-  fact: Higher renewable penetration increases the need for reliable capacity and balancing.
+  fact: 新能源渗透率提升会增加对可靠容量和系统平衡能力的需求。
 strength: medium
 confidence: medium
-impact: Supports the hypothesis that stable capacity and dispatch capability may become control points.
-next_action: Link to insights/examples/stable-capacity-becomes-scarce.md and hypotheses/hypothesis-ledger.md.
+impact: 支持稳定容量和调度能力可能成为控制点的假设。
+next_action: 链接到 insights/examples/stable-capacity-becomes-scarce.md 和 hypotheses/hypothesis-ledger.md。
 ```
 ```
 
