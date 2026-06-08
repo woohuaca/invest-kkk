@@ -41,8 +41,10 @@ hypothesis:
   industry:
   scope:
 status:
+last_updated:
 previous_confidence:
-new_confidence:
+confidence:
+confidence_change_reason:
 verified_by:
 weakened_by:
 invalidated_by:
@@ -58,8 +60,10 @@ next_action:
 - `hypothesis.industry`：所属行业。
 - `hypothesis.scope`：`Macro / Industry / Bottleneck / Control Point / Company / Timing`。
 - `status`：假设状态。
+- `last_updated`：本次更新日期，写入 `hypotheses/hypothesis-ledger.md`。
 - `previous_confidence`：更新前置信度。
-- `new_confidence`：更新后置信度。
+- `confidence`：更新后置信度，写入台账的当前 `confidence`。
+- `confidence_change_reason`：置信度变化原因；如果没有变化，说明维持原因。
 - `verified_by`：支持或验证假设的证据。
 - `weakened_by`：削弱假设的证据。
 - `invalidated_by`：推翻假设的证据。
@@ -76,8 +80,10 @@ hypothesis:
   industry: 能源
   scope: 瓶颈 / 控制点
 status: active
+last_updated: '2026-06-05'
 previous_confidence: 70%
-new_confidence: 75%
+confidence: 75%
+confidence_change_reason: 新能源渗透率和高峰负荷调度复杂度继续上升，支持原假设。
 verified_by:
   - 新能源渗透率持续提升。
   - 高峰负荷窗口的调度复杂度上升。
