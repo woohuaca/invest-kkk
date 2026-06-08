@@ -2,7 +2,7 @@
 
 ## 结论
 
-本文件记录 Energy Research OS v0.1 的核心假设。每条假设必须包含状态、置信度、证据、反证和下一步动作。
+本文件记录 Energy Research OS v0.1 的核心假设。每条假设必须包含状态、置信度、更新日期、置信度变化原因、证据、反证和下一步动作。
 
 ## Hypothesis: energy-001
 
@@ -14,6 +14,9 @@ hypothesis:
   scope: Bottleneck / Control Point
 status: active
 confidence: 70%
+last_updated: '2026-06-05'
+previous_confidence: null
+confidence_change_reason: 初始记录，尚无历史置信度变化。
 supporting_evidence:
   - 新能源渗透率提升会增加系统平衡复杂性。
   - 电力市场改革可能让可靠性价值更显性。
@@ -39,6 +42,9 @@ hypothesis:
   scope: Control Point
 status: active
 confidence: 60%
+last_updated: '2026-06-05'
+previous_confidence: null
+confidence_change_reason: 初始记录，尚无历史置信度变化。
 supporting_evidence:
   - 分布式发电和灵活负荷会提高系统复杂性。
 counter_evidence:
@@ -60,6 +66,9 @@ hypothesis:
   scope: Control Point / Company
 status: active
 confidence: 60%
+last_updated: '2026-06-05'
+previous_confidence: null
+confidence_change_reason: 初始记录，尚无历史置信度变化。
 supporting_evidence:
   - 分布式资产增长后，客户更难用人工方式管理能源系统。
 counter_evidence:

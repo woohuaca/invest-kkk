@@ -26,7 +26,7 @@ counter_evidence:
   - 监管主体或电网运营方可能吸收大部分价值。
   - 市场改革推进可能较慢。
 confidence: medium
-next_action: 跟踪调度市场改革，并链接到 `../metrics/metric-catalog.md`。
+next_action: 跟踪调度市场改革，并链接到 `metrics/metric-catalog.md`。
 ```
 
 ## Candidate: EMS

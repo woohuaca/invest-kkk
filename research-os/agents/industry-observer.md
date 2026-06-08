@@ -28,39 +28,35 @@ Industry Observer 每周观察能源行业外部变化，输出结构化信号�
 3. 标注层级：发电、输电、配电、调度、EMS、虚拟电厂、运维知识。
 4. 评估强度：判断信号是弱、中、强。
 5. 评估置信度：说明判断是否有足够证据。
-6. 输出下一步动作：需要继续跟踪、更新洞察卡片，还是更新行业假设。
+6. 输出下一步动作：需要继续跟踪、更新洞察卡片，还是更新假设台账。
 
 ## 输出格式
 
 ```yaml
 signal:
   title:
-  date:
   source:
+  date:
   topic:
   layer:
-  summary:
+  fact:
 strength:
 confidence:
 impact:
-evidence:
-counter_evidence:
 next_action:
 ```
 
 ## 字段说明
 
 - `signal.title`：一句话信号标题。
-- `signal.date`：信号日期。
 - `signal.source`：信息来源。
-- `signal.topic`：主题，例如 `power_market / storage / data_center / dispatch / grid`。
-- `signal.layer`：作用层级，例如 `generation / transmission / distribution / dispatch / EMS / VPP / operations_knowledge`。
-- `signal.summary`：事实摘要，不写投资结论。
+- `signal.date`：信号日期，使用带引号日期。
+- `signal.topic`：主题，使用 `policy / grid / power_market / storage / data_center / dispatch`。
+- `signal.layer`：作用层级，使用 `generation / transmission / distribution / dispatch / EMS / VPP / operations_knowledge`。
+- `signal.fact`：事实本身，不写推断。
 - `strength`：`weak / medium / strong`。
-- `confidence`：`low / medium / high` 或百分比。
+- `confidence`：`low / medium / high`。
 - `impact`：说明它可能影响哪个瓶颈、控制点、假设或评分维度。
-- `evidence`：支持该信号的事实。
-- `counter_evidence`：削弱该信号的事实或未知项。
 - `next_action`：下一步动作。
 
 ## 示例
@@ -68,20 +64,14 @@ next_action:
 ```yaml
 signal:
   title: 容量市场改革提升稳定电源价值
-  date: 2026-06-05
   source: 电力市场政策更新
-  topic: 电力市场
-  layer: 调度
-  summary: 市场规则开始更明确地为可靠容量和系统平衡能力定价。
+  date: '2026-06-05'
+  topic: power_market
+  layer: dispatch
+  fact: 市场规则开始更明确地为可靠容量和系统平衡能力定价。
 strength: medium
 confidence: medium
 impact: 稳定容量和调度能力可能成为更重要的瓶颈。
-evidence:
-  - 容量补偿机制正在讨论或扩大。
-  - 新能源渗透率提升增加系统平衡需求。
-counter_evidence:
-  - 储能成本下降可能削弱稳定容量稀缺性。
-  - 政策可能限制收益率。
 next_action: 更新 `insights/` 相关洞察卡片，并在 `hypotheses/hypothesis-ledger.md` 跟踪容量市场落地证据。
 ```
 

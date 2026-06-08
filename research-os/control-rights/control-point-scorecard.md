@@ -25,5 +25,5 @@
 ## 下一步
 
 - 将高分候选写入 `candidates.md`。
-- 用 `../metrics/` 和 `../hypotheses/` 校验评分。
+- 用 `metrics/` 和 `hypotheses/` 校验评分。
 - 对低置信度候选补充证据和反证。

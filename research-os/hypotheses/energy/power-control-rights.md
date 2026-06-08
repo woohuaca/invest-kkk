@@ -23,4 +23,4 @@
 
 - 更新 `hypotheses/hypothesis-ledger.md`。
 - 将强假设转成 `insights/` 卡片。
-- 在控制权分析模块建立后，将可评分假设输入 `control-rights/control-point-scorecard.md`。
+- 将可评分假设持续输入 `control-rights/control-point-scorecard.md`。
