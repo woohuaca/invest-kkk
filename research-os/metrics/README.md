@@ -20,8 +20,9 @@
 
 ## 使用方式
 
-1. 从 `data/collection-log.md` 选择信号。
-2. 在 `metric-catalog.md` 找到对应指标。
-3. 在 `power-layer-metrics.md` 判断指标对应的电力层级。
-4. 在 `calculation-log.md` 记录本次判断。
-5. 如果指标改变判断，更新 `insights/` 或 `hypotheses/`.
+1. 从数据采集层 `data/collection-log.md` 选择信号。
+2. 在指标计算层 `metric-catalog.md` 找到对应指标。
+3. 在指标计算层 `power-layer-metrics.md` 判断指标对应的电力层级。
+4. 在指标计算层 `calculation-log.md` 记录本次判断。
+5. 如果指标改变控制权判断，按控制权分析模块 `beliefs/control-rights-theory.md` 校准判断口径。
+6. 如果指标形成可验证判断，更新洞察卡片 `insights/`；如果改变待验证命题，更新假设跟踪系统 `agents/hypothesis-tracker.md` 与行业假设 `industries/energy/hypotheses.md`。
