@@ -22,6 +22,7 @@ score:
 evidence:
   - 新能源渗透率提升会增加系统平衡复杂性。
   - 电力市场改革可能为可靠性和灵活性定价。
+  - 发电侧容量电价机制开始覆盖煤电、气电、抽水蓄能和新型储能。
 counter_evidence:
   - 监管主体或电网运营方可能吸收大部分价值。
   - 市场改革推进可能较慢。
@@ -47,9 +48,36 @@ score:
 evidence:
   - 客户需要同时管理能源成本、可靠性和合规要求。
   - 工作流集成可能提高客户切换成本。
+  - 数据中心高可靠负荷增长和算电协同政策提高能源管理复杂度。
 counter_evidence:
   - 如果切换成本保持较低，EMS 可能商品化。
   - 公用事业公司或电网运营方可能控制调度入口。
 confidence: medium
-next_action: 寻找客户依赖和数据反馈证据。
+next_action: 寻找数据中心客户依赖、需求响应履约和数据反馈证据。
+```
+
+## Candidate: compute-power-coordination
+
+```yaml
+candidate:
+  layer: EMS
+  asset_type: 算电协同操作与调度层
+  control_point: 算电协同可能把数据中心负荷、绿电消纳、需求响应和电力价格信号连接成新的控制层。
+score:
+  complexity_control: 4
+  bottleneck_power: 3
+  pricing_power: 3
+  data_advantage: 5
+  organizational_dependency: 4
+  supply_response_lag: 3
+  durability: 4
+evidence:
+  - 互联网数据服务用电保持高增，提高高可靠负荷管理需求。
+  - 算电协同行动方案鼓励算力设施作为负荷侧灵活可调节资源参与电网运行。
+  - 算电协同需要同时处理电力可靠性、绿电比例、负荷迁移和成本优化。
+counter_evidence:
+  - 数据中心实际可调负荷比例可能有限。
+  - 算力调度和电力调度可能由不同主体控制，价值不一定沉淀在 EMS 或 VPP 平台。
+confidence: medium
+next_action: 跟踪数据中心需求响应案例、绿电交易和算力负荷调度数据。
 ```
