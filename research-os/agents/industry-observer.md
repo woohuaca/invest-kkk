@@ -36,6 +36,7 @@ Industry Observer 每周观察能源行业外部变化，输出结构化信号�
 signal:
   title:
   source:
+  source_url:
   date:
   topic:
   layer:
@@ -50,6 +51,7 @@ next_action:
 
 - `signal.title`：一句话信号标题。
 - `signal.source`：信息来源。
+- `signal.source_url`：来源链接，优先使用官方原文或可追溯公开报道。
 - `signal.date`：信号日期，使用带引号日期。
 - `signal.topic`：主题，使用 `policy / grid / power_market / storage / data_center / dispatch`。
 - `signal.layer`：作用层级，使用 `generation / transmission / distribution / dispatch / EMS / VPP / operations_knowledge`。
@@ -65,6 +67,7 @@ next_action:
 signal:
   title: 容量市场改革提升稳定电源价值
   source: 电力市场政策更新
+  source_url: https://www.ndrc.gov.cn/xxgk/jd/jd/202601/t20260130_1403521.html
   date: '2026-06-05'
   topic: power_market
   layer: dispatch

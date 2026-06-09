@@ -67,7 +67,7 @@ score:
   complexity_control: 4
   bottleneck_power: 3
   pricing_power: 3
-  data_advantage: 5
+  data_advantage: 4
   organizational_dependency: 4
   supply_response_lag: 3
   durability: 4
@@ -78,6 +78,10 @@ evidence:
 counter_evidence:
   - 数据中心实际可调负荷比例可能有限。
   - 算力调度和电力调度可能由不同主体控制，价值不一定沉淀在 EMS 或 VPP 平台。
+evidence_gap:
+  - 需要验证数据中心实际可调负荷比例。
+  - 需要验证客户是否把算电协同嵌入长期工作流。
+  - 需要验证平台是否能沉淀跨客户的数据反馈优势。
 confidence: medium
 next_action: 跟踪数据中心需求响应案例、绿电交易和算力负荷调度数据。
 ```

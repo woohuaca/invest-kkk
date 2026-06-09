@@ -10,6 +10,7 @@ Weekly signal 是数据采集层的最小输出单位。它记录事实、信号
 signal:
   title:
   source:
+  source_url:
   date:
   topic:
   layer:
@@ -24,6 +25,7 @@ next_action:
 
 - `signal.title`：一句话信号标题。
 - `signal.source`：信息来源。
+- `signal.source_url`：来源链接，优先使用官方原文或可追溯公开报道。
 - `signal.date`：事实日期或发布日期。
 - `signal.topic`：`policy / grid / power_market / storage / data_center / dispatch`。
 - `signal.layer`：`generation / transmission / distribution / dispatch / EMS / VPP / operations_knowledge`。
@@ -39,6 +41,7 @@ next_action:
 signal:
   title: 调度改革提升稳定容量价值
   source: 电力市场改革文件
+  source_url: https://www.ndrc.gov.cn/xxgk/jd/jd/202601/t20260130_1403521.html
   date: '2026-06-05'
   topic: power_market
   layer: dispatch

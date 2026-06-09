@@ -10,6 +10,7 @@
 signal:
   title: 稳定容量可能变得更稀缺
   source: Energy Research OS v0.1 种子记录
+  source_url: https://github.com/woohuaca/invest-kkk/blob/main/research-os/data/collection-log.md
   date: '2026-06-05'
   topic: power_market
   layer: dispatch
@@ -26,6 +27,7 @@ next_action: 链接到 insights/examples/stable-capacity-becomes-scarce.md 和 h
 signal:
   title: 风光装机高增叠加利用小时下降
   source: 国家能源局 2026年1-4月份全国电力统计数据
+  source_url: https://www.nea.gov.cn/20260525/c509435a0f09497cb3d2ca361fa262de/c.html
   date: '2026-05-25'
   topic: power_market
   layer: dispatch
@@ -40,6 +42,7 @@ next_action: 更新 metrics/calculation-log.md 的 renewable_penetration 与 cap
 signal:
   title: 发电侧容量电价机制强化顶峰能力价值
   source: 国家发展改革委、国家能源局 关于完善发电侧容量电价机制的通知
+  source_url: https://www.ndrc.gov.cn/xxgk/jd/jd/202601/t20260130_1403521.html
   date: '2026-01-30'
   topic: power_market
   layer: dispatch
@@ -54,6 +57,7 @@ next_action: 更新 metrics/calculation-log.md 的 dispatch_market_reform，并�
 signal:
   title: 互联网数据服务用电保持高增
   source: 国家能源局 2026年4月份全社会用电量数据
+  source_url: https://cpnn.com.cn/news/xwtt/202605/t20260519_1888692.html
   date: '2026-05-19'
   topic: data_center
   layer: distribution
@@ -68,6 +72,7 @@ next_action: 更新 metrics/calculation-log.md 的 data_center_load_growth，并
 signal:
   title: 算力设施被纳入负荷侧灵活调节资源
   source: 国家发展改革委、国家能源局、工业和信息化部、国家数据局 关于促进人工智能与能源双向赋能的行动方案
+  source_url: https://www.nda.gov.cn/sjj/zwgk/zcfb/0508/20260508194112925527578_pc.html
   date: '2026-05-08'
   topic: data_center
   layer: EMS
@@ -80,14 +85,30 @@ next_action: 在 control-rights/candidates.md 新增或更新算电协同候选�
 
 ```yaml
 signal:
-  title: 储能市场化试点推进但利用率仍是反证
-  source: 国家能源局甘肃监管办公室、山东监管办公室 储能市场化进展
+  title: 甘肃推动电网侧储能参与中长期市场
+  source: 国家能源局甘肃监管办公室 电网侧储能参与中长期市场进展
+  source_url: https://gsb.nea.gov.cn/dtyw/jgdt/202605/t20260515_301162.html
   date: '2026-05-15'
   topic: storage
   layer: VPP
-  fact: 甘肃推动电网侧储能参与中长期市场，新型储能并网规模达到966万千瓦；山东推动新能源配建储能一体化参与电力市场，以解决配储利用率偏低、作用发挥不充分问题。
+  fact: 甘肃推动电网侧储能参与中长期市场，新型储能并网规模达到966万千瓦。
 strength: medium
 confidence: high
-impact: storage_utilization 正在从并网配套走向市场调节价值，但低价差和利用率偏低仍是稳定容量稀缺假设的关键反证。
-next_action: 更新 metrics/calculation-log.md 的 storage_utilization，并保留 energy-001 的储能反证。
+impact: storage_utilization 正在从并网配套走向市场调节价值，支持储能从资源层进入调度和聚合层。
+next_action: 更新 metrics/calculation-log.md 的 storage_utilization，并跟踪储能调用频率。
+```
+
+```yaml
+signal:
+  title: 山东新能源配储利用率偏低形成反证
+  source: 国家能源局山东监管办公室 新能源配储一体化参与电力市场进展
+  source_url: https://sdb.nea.gov.cn/dtyw/jgdt/202604/t20260427_300325.html
+  date: '2026-04-27'
+  topic: storage
+  layer: VPP
+  fact: 山东推动新能源配建储能一体化参与电力市场，以解决配储利用率偏低、作用发挥不充分问题。
+strength: medium
+confidence: high
+impact: storage_utilization 仍是稳定容量稀缺假设的关键反证；如果利用率快速提升，稳定容量稀缺可能被部分缓解。
+next_action: 在 hypotheses/hypothesis-ledger.md 保留 energy-001 的储能反证，并持续观察储能利用小时和价差。
 ```

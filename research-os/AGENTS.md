@@ -60,7 +60,7 @@
 ## 信息流
 
 ```text
-投资信念 -> 分析框架 -> data -> metrics -> insights -> hypotheses -> control-rights -> 持续观察
+投资信念 -> 分析框架 -> data -> metrics -> insights -> hypotheses -> control-rights -> reviews -> 持续观察
 ```
 
 ## 目录职责
@@ -74,5 +74,6 @@
 - `insights/`：由事实和指标提炼出的可验证判断，使用洞察卡片格式记录假设、证据、反证、置信度和下一步动作。
 - `hypotheses/`：假设跟踪系统，维护核心判断、状态、证据、反证和置信度变化。
 - `control-rights/`：控制权分析模块，识别未来 10 年电力产业控制点候选，不输出股票推荐或交易动作。
+- `reviews/`：研究评审记录，检查事实可追溯性、schema、推理链、反证和研究边界。
 - `decisions/`：买入、卖出、观望、仓位调整和复盘记录；Energy Research OS v0.1 暂不使用本目录输出交易动作。
 - `agents/`：AI 或研究助手执行任务时使用的工作指令，具体角色和输出规范见 `agents/README.md`。

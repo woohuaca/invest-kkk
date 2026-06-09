@@ -7,7 +7,7 @@
 ## Agent 流程
 
 ```text
-Industry Observer -> data/ -> metrics/ -> insights/ -> hypotheses/ -> control-rights/
+Industry Observer -> data/ -> metrics/ -> insights/ -> hypotheses/ -> control-rights/ -> Research Reviewer -> reviews/
 ```
 
 Agent 不直接输出股票推荐、交易动作或仓位建议。
@@ -19,6 +19,7 @@ Agent 不直接输出股票推荐、交易动作或仓位建议。
 | Industry Observer | `industry-observer.md` | 行业信号 YAML | 每周 |
 | Hypothesis Tracker | `hypothesis-tracker.md` | 假设状态更新 | 每周或有重大事实变化时 |
 | Control Point Finder | `control-point-finder.md` | 控制点候选 | 每周或月度复盘 |
+| Research Reviewer | `research-reviewer.md` | 研究评审记录 | 每轮观察后 |
 
 ## 共同规则
 
@@ -34,6 +35,7 @@ Agent 不直接输出股票推荐、交易动作或仓位建议。
 - `Industry Observer` 发现外部变化。
 - `Hypothesis Tracker` 判断这些变化验证、削弱还是推翻现有假设。
 - `Control Point Finder` 判断变化是否说明新的瓶颈、控制点或组织依赖正在形成。
+- `Research Reviewer` 检查事实可追溯性、schema、推理链、反证和研究边界。
 
 ## 输出落点
 
@@ -41,3 +43,4 @@ Agent 不直接输出股票推荐、交易动作或仓位建议。
 - `Hypothesis Tracker` 的状态更新写入 `hypotheses/hypothesis-ledger.md`。
 - `Control Point Finder` 的候选控制点写入 `control-rights/candidates.md`。
 - 能改变判断的输出应同步形成 `insights/` 洞察卡片。
+- `Research Reviewer` 的评审记录写入 `reviews/`。
