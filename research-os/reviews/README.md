@@ -15,7 +15,8 @@
 1. 每轮 `Industry Observer`、`Hypothesis Tracker`、`Control Point Finder` 完成后运行评审。
 2. 将评审记录写入本目录。
 3. 对 `approved_with_fixes` 或 `blocked` 的问题，先修正对应模块。
-4. 修正后重新验证 YAML、source URL、反证和研究边界。
+4. 对 `approved_with_limits` 的来源或结论，必须保留置信度边界和后续回验动作。
+5. 修正后重新验证 YAML、source URL、反证和研究边界。
 
 ## 非目标
 

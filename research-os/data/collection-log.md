@@ -112,3 +112,20 @@ confidence: high
 impact: storage_utilization 仍是稳定容量稀缺假设的关键反证；如果利用率快速提升，稳定容量稀缺可能被部分缓解。
 next_action: 在 hypotheses/hypothesis-ledger.md 保留 energy-001 的储能反证，并持续观察储能利用小时和价差。
 ```
+
+## 2026-06-10
+
+```yaml
+signal:
+  title: 电力现货价格呈现区域分化和价差波动
+  source: 朗新能源研究院「观价」电力现货市场数据洞察
+  source_url: 'https://mp.weixin.qq.com/s/-5P4z7NF0WaoCTbBwhcg8g'
+  date: '2026-06-10'
+  topic: power_market
+  layer: dispatch
+  fact: 文章跟踪山西、广东、山东、甘肃、浙江、陕西、辽宁、安徽 8 个省级电力现货市场，指出 2026 年 5 月 16 日至 31 日重点省份价格延续显著区域分化，广东、浙江实时均价超过 400 元/兆瓦时并高于或接近燃煤基准价，多数省份环比上涨。
+strength: medium
+confidence: medium
+impact: day_ahead_realtime_spread、regional_price_divergence 和 market_volatility 可能成为调度、预测、储能、EMS/VPP 的领先观察指标。
+next_action: 将朗新能源研究院「观价」纳入二级观察源，并在 metrics/metric-catalog.md 增加现货市场价差和区域分化指标。
+```
