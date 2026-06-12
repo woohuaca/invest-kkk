@@ -129,3 +129,20 @@ confidence: medium
 impact: day_ahead_realtime_spread、regional_price_divergence 和 market_volatility 可能成为调度、预测、储能、EMS/VPP 的领先观察指标。
 next_action: 将朗新能源研究院「观价」纳入二级观察源，并在 metrics/metric-catalog.md 增加现货市场价差和区域分化指标。
 ```
+
+## 2026-06-12
+
+```yaml
+signal:
+  title: 电池材料价格回落后出现修复迹象
+  source: REAI Lab《盛宴不再》
+  source_url: 'https://mp.weixin.qq.com/s/eja5Th27GErdg69dxXlh1A'
+  date: '2026-06-12'
+  topic: storage
+  layer: VPP
+  fact: 文章引用 Visual Capitalist / Benchmark Mineral Intelligence 图表，指出锂、钴、镍、天然石墨价格在 2023 年前后冲高后回落，2026 年部分材料价格出现回升迹象。
+strength: medium
+confidence: medium
+impact: battery_material_price_index、storage_cost_pressure 和 resource_cycle_rebound 会影响储能扩张速度，进而改变稳定容量稀缺、调度瓶颈和 VPP 控制权判断。
+next_action: 回溯 Benchmark Mineral Intelligence、Visual Capitalist 或其他大宗商品数据源，验证锂、钴、镍、天然石墨价格是否持续回升。
+```

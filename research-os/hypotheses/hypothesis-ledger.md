@@ -14,18 +14,20 @@ hypothesis:
   scope: Bottleneck / Control Point
 status: active
 confidence: 75%
-last_updated: '2026-06-09'
-previous_confidence: 70%
-confidence_change_reason: 风光装机高增、利用小时下降和发电侧容量电价机制共同增强稳定容量稀缺与可靠容量显性定价证据。
+last_updated: '2026-06-12'
+previous_confidence: 75%
+confidence_change_reason: 电池材料价格信号同时提供反证和支持：材料价格从高位回落支持储能降本，削弱稳定容量稀缺；但 2026 年部分材料价格回升提示储能成本下降并非单向线性过程，因此置信度暂不调整。
 supporting_evidence:
   - 新能源渗透率提升会增加系统平衡复杂性。
   - 电力市场改革可能让可靠性价值更显性。
   - 2026年1-4月太阳能和风电装机继续高增，但全国发电设备平均利用小时同比下降。
   - 发电侧容量电价机制开始覆盖煤电、气电、抽水蓄能和新型储能。
+  - 2026 年部分电池材料价格出现回升迹象，提示上游资源端可能重新影响储能扩张速度。
 counter_evidence:
   - 储能成本可能快速下降。
   - 需求响应可能降低稳定容量稀缺性。
   - 储能市场化推进可能提高调节资源利用率，削弱稳定容量稀缺。
+  - 锂、钴、镍、天然石墨价格已从高峰回落，可能继续支持储能降本和供给扩张。
 linked_insights:
   - insights/examples/stable-capacity-becomes-scarce.md
 linked_metrics:
@@ -34,7 +36,10 @@ linked_metrics:
   - peak_valley_spread
   - dispatch_market_reform
   - storage_utilization
-next_action: 跟踪容量补偿机制、储能利用率和峰时价差。
+  - battery_material_price_index
+  - storage_cost_pressure
+  - resource_cycle_rebound
+next_action: 跟踪容量补偿机制、储能利用率、峰时价差和电池材料价格是否持续回升。
 ```
 
 ## Hypothesis: energy-002

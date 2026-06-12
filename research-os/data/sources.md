@@ -14,6 +14,7 @@
 | 储能 | 装机、利用率、价格、商业模式 | generation / dispatch / VPP | metrics / insights |
 | 数据中心 | 负荷增长、能耗、并网、可靠性要求 | distribution / dispatch / EMS | metrics / control-rights |
 | 朗新能源研究院「观价」 | 省级现货价格、日前-实时价差、燃煤基准价、一次能源、天气、供需预测、政策动态 | dispatch / EMS / VPP / operations_knowledge | data / metrics / insights / control-rights |
+| REAI Lab「从图说起」 | 电池材料价格、储能上游资源周期、供应链再定价 | generation / VPP / dispatch | data / metrics / hypotheses / control-rights |
 
 ## 采集原则
 

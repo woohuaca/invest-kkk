@@ -24,11 +24,42 @@ evidence:
   - 电力市场改革可能为可靠性和灵活性定价。
   - 发电侧容量电价机制开始覆盖煤电、气电、抽水蓄能和新型储能。
   - 重点省份现货价格分化和日前-实时价差提示调度、预测和实时平衡的重要性上升。
+  - 电池材料价格若持续回升，储能供给扩张速度可能低于线性降本假设，调度瓶颈会更持久。
 counter_evidence:
   - 监管主体或电网运营方可能吸收大部分价值。
   - 市场改革推进可能较慢。
+  - 如果电池材料价格继续下行且储能利用率快速提升，部分调度瓶颈可能被供给弹性缓解。
 confidence: medium
 next_action: 跟踪调度市场改革，并链接到 `metrics/metric-catalog.md`。
+```
+
+## Candidate: VPP
+
+```yaml
+candidate:
+  layer: VPP
+  asset_type: 分布式灵活资源聚合与收益优化能力
+  control_point: 虚拟电厂可能控制储能、需求响应和分布式负荷在不同市场价格信号下的聚合调度。
+score:
+  complexity_control: 4
+  bottleneck_power: 3
+  pricing_power: 3
+  data_advantage: 4
+  organizational_dependency: 4
+  supply_response_lag: 3
+  durability: 3
+evidence:
+  - 储能市场化推进支持分布式资源从配套资产走向可调节资源。
+  - 现货市场波动和区域价格分化提高聚合调度价值。
+  - 电池材料价格波动会提高储能资产收益优化和成本管理的重要性。
+counter_evidence:
+  - 如果储能成本持续下降且单体资产足够便宜，VPP 的聚合溢价可能被压低。
+  - 如果市场规则或电网调度入口限制第三方聚合，价值可能难以商业化沉淀。
+evidence_gap:
+  - 需要验证储能利用小时、需求响应履约和聚合收益是否持续改善。
+  - 需要验证客户是否把 VPP 能力嵌入长期运营流程。
+confidence: medium
+next_action: 跟踪 storage_cost_pressure、storage_utilization、market_volatility 和 demand_response。
 ```
 
 ## Candidate: EMS
