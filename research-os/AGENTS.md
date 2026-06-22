@@ -75,5 +75,6 @@
 - `hypotheses/`：假设跟踪系统，维护核心判断、状态、证据、反证和置信度变化。
 - `control-rights/`：控制权分析模块，识别未来 10 年电力产业控制点候选，不输出股票推荐或交易动作。
 - `reviews/`：研究评审记录，检查事实可追溯性、schema、推理链、反证和研究边界。
+- `follow-up-strategy.md`：跟进策略和执行看板，把各模块的 `next_action` 收拢成每周、每月和触发式动作。
 - `decisions/`：买入、卖出、观望、仓位调整和复盘记录；Energy Research OS v0.1 暂不使用本目录输出交易动作。
 - `agents/`：AI 或研究助手执行任务时使用的工作指令，具体角色和输出规范见 `agents/README.md`。

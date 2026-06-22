@@ -146,3 +146,65 @@ confidence: medium
 impact: battery_material_price_index、storage_cost_pressure 和 resource_cycle_rebound 会影响储能扩张速度，进而改变稳定容量稀缺、调度瓶颈和 VPP 控制权判断。
 next_action: 回溯 Benchmark Mineral Intelligence、Visual Capitalist 或其他大宗商品数据源，验证锂、钴、镍、天然石墨价格是否持续回升。
 ```
+
+## 2026-06-22
+
+```yaml
+signal:
+  title: 可再生能源装机突破24亿千瓦并要求提升五大消纳能力
+  source: 国家能源局 全国可再生能源电力开发建设月度（6月）调度视频会
+  source_url: https://www.nea.gov.cn/20260616/ab30f2b505764d13972ac14e7d3ffeed/c.html
+  date: '2026-06-16'
+  topic: power_market
+  layer: dispatch
+  fact: 2026年1-4月，全国可再生能源发电装机突破24亿千瓦，占全国电力总装机60.5%；新增装机7516万千瓦，占全部新增装机70.7%；会议要求提升电网接入、调节、调度、预测、跨区互济五大能力，并依托价格信号带动储能发展。
+strength: strong
+confidence: high
+impact: renewable_penetration、grid_connection_delay、congestion、dispatch_market_reform 同时增强，支持高比例新能源下的调度复杂性和消纳瓶颈观察。
+next_action: 更新 metrics/calculation-log.md 的 renewable_penetration 和 dispatch_market_reform，并在 energy-001 中保持储能供给弹性反证。
+```
+
+```yaml
+signal:
+  title: 全国统一电力市场体系初步建成且新型经营主体扩围
+  source: 国家能源局页面《2025年度中国电力市场发展报告》发布
+  source_url: https://www.nea.gov.cn/20260618/41e848b9ec6543998757db3864e01ab2/c.html
+  date: '2026-06-18'
+  topic: power_market
+  layer: dispatch
+  fact: 报告显示省级电力现货市场实现基本全覆盖，全国新型储能装机规模达到1.36亿千瓦/3.51亿千瓦时，虚拟电厂理论调节能力超过1600万千瓦，车网互动聚合资源超过1900万千瓦，21个省区市或地区实现新能源报量报价参与现货市场，江西、山西推动实时市场5分钟出清。
+strength: strong
+confidence: high
+impact: dispatch_market_reform、storage_utilization、demand_response 和 VPP 候选控制点证据增强，但理论调节能力仍需和实际调用收益区分。
+next_action: 更新 energy-002 和 energy-003，区分市场机制成熟、资源聚合规模和客户组织依赖三类证据。
+```
+
+```yaml
+signal:
+  title: 云霄直流启动输电权市场化交易
+  source: 国家能源局 两部门部署在云霄直流开展输电权市场化交易
+  source_url: https://www.nea.gov.cn/20260612/6d9c29711f3a4718b121b467cd0f0215/c.html
+  date: '2026-06-12'
+  topic: grid
+  layer: transmission
+  fact: 国家发展改革委、国家能源局提出自2026年6月1日起，按照云霄直流输电权市场化交易方案，以月度及以内交易起步，在云霄直流通道开展输电权市场化交易，用于挖掘输电通道潜力、提升通道利用效率、支撑网间互济互保和常态化交易需求。
+strength: medium
+confidence: high
+impact: congestion 和 dispatch_market_reform 从省内现货扩展到跨网输电通道，提示输电权和跨区交易可能成为统一电力市场的重要控制点。
+next_action: 在 metrics/calculation-log.md 增加 congestion / transmission-rights 观察，并持续跟踪跨经营区交易常态化。
+```
+
+```yaml
+signal:
+  title: 12398通报显示配网承载力和新能源并网仍是热点问题
+  source: 国家能源局12398能源监管热线投诉举报处理情况通报（2026年5月）
+  source_url: https://www.nea.gov.cn/20260622/c9c23bedf4c24757a6a087c763362095/c.html
+  date: '2026-06-22'
+  topic: grid
+  layer: distribution
+  fact: 2026年5月，12398热线平台接收投诉1832件，热点包括多次停电、低电压、用电报装、电表计量等；通报要求加强电能质量治理、推进新增配变布点和变电增容，并规范新能源并网管理，做好接入受限台区、反向过载台区等监测。
+strength: medium
+confidence: high
+impact: grid_connection_delay、local_load_growth 和 congestion 提示配网承载力仍可能成为分布式新能源、充电桩和工商业用能的局部瓶颈。
+next_action: 跟踪低电压、台区承载力、新能源接入受限案例是否持续，并判断是否强化 distribution 层控制点。
+```
