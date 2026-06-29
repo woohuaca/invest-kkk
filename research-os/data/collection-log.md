@@ -285,3 +285,48 @@ confidence: high
 impact: green_power_accounting、customer_switching_cost 和 data_feedback_loop 可能把企业绿电采购、合规核算和能源管理工作流连接起来。
 next_action: 观察企业侧是否出现合规、采购、用电数据一体化流程，以及该流程是否沉淀到 EMS 或 operations_knowledge 层。
 ```
+
+```yaml
+signal:
+  title: 清洁能源技术贸易在关税扰动下仍处高位
+  source: IEA Energy Technology Perspectives 2026
+  source_url: https://www.iea.org/reports/energy-technology-perspectives-2026/executive-summary
+  date: '2026-03-26'
+  topic: energy_export
+  layer: export_system
+  fact: IEA指出，清洁能源技术全球市场价值在2025年接近1.2万亿美元，关键清洁能源技术国际贸易在2025年二季度达到历史高位；在既定政策情景下，相关技术全球净贸易额预计从2025年的2900亿美元增至2035年的6200亿美元，中国仍是最大出口国，2035年净出口价值预计达到3750亿美元；中国电动车出口在2025年约500亿美元，新兴经济体占中国电动车出口的比例已接近40%。
+strength: strong
+confidence: high
+impact: energy_equipment_export_orders 与 trade_barrier_policy 同时增强，说明能源出口是大市场，但关税和市场重定向会改变出口玩法。
+next_action: 更新 metrics/calculation-log.md，并在 energy-004 中区分设备贸易规模和系统控制权。
+```
+
+```yaml
+signal:
+  title: 全球电网投资缺口强化海外电网设备和系统机会
+  source: IEA Electricity Grids and Secure Energy Transitions
+  source_url: https://www.iea.org/reports/electricity-grids-and-secure-energy-transitions/executive-summary
+  date: '2023-10-17'
+  topic: energy_export
+  layer: export_system
+  fact: IEA指出，为实现各国能源和气候目标，到2040年全球需要新增或改造超过8000万公里电网；至少3000GW可再生能源项目正在等待并网；全球电网投资长期停滞在每年约3000亿美元，到2030年需接近翻倍至每年超过6000亿美元。
+strength: strong
+confidence: high
+impact: overseas_grid_capex 增强，提示海外电网、配网、变压器、并网、EMS和长期运维可能成为能源出口的重要需求池。
+next_action: 在 energy-export-system 候选中增加海外电网瓶颈证据，并寻找海外项目运维、软件和本地服务网络证据。
+```
+
+```yaml
+signal:
+  title: EU CBAM正式期把碳数据和证书义务嵌入进口流程
+  source: European Commission Carbon Border Adjustment Mechanism
+  source_url: https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en
+  date: '2026-06-23'
+  topic: energy_export
+  layer: operations_knowledge
+  fact: 欧盟CBAM自2026年1月1日进入正式期，超过50吨门槛的CBAM商品进口商需申请授权申报人资格、购买CBAM证书、申报进口商品隐含碳排放并按年交出相应证书；CBAM初始覆盖水泥、钢铁、铝、化肥、电力和氢等品类，欧盟已于2026年公布首个CBAM证书价格并更新正式期材料。
+strength: strong
+confidence: high
+impact: trade_barrier_policy、green_power_accounting 和 export_customer_dependency 同时增强，提示出口企业需要把能源、碳、绿电和审计数据纳入合规工作流。
+next_action: 观察出口企业是否把绿电采购、碳足迹、证书、审计和能源管理系统连接为持续工作流。
+```

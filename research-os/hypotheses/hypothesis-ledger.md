@@ -119,3 +119,39 @@ linked_metrics:
   - data_feedback_loop
 next_action: 寻找企业绿电核算工作流、数据中心客户依赖、需求响应履约、VPP实际调用收益和数据反馈证据。
 ```
+
+## Hypothesis: energy-004
+
+```yaml
+hypothesis:
+  id: energy-004
+  title: Energy Export Moves From Products To Systems
+  statement: 能源出口的长期控制权不在一次性设备出口，而在海外能源系统、长期运维、EMS/VPP和绿色属性核算。
+  scope: Control Point / Industry
+status: active
+confidence: 55%
+last_updated: '2026-06-29'
+previous_confidence: new
+confidence_change_reason: IEA 2026 报告确认清洁能源技术贸易和中国净出口仍具规模，新兴市场成为中国电动车出口增量方向；全球电网投资缺口和欧盟 CBAM 正式期又强化海外系统、运维和绿色属性核算需求。但仍缺少海外客户续约、软件绑定和服务收入证据，因此初始置信度设为 55%。
+supporting_evidence:
+  - 清洁能源技术全球市场价值在2025年接近1.2万亿美元，关键清洁能源技术贸易在2025年二季度达到历史高位。
+  - 在既定政策情景下，清洁能源技术全球净贸易额预计从2025年的2900亿美元增至2035年的6200亿美元，中国仍是最大出口国。
+  - 中国电动车出口在2025年约500亿美元，新兴经济体占中国电动车出口比例已接近40%。
+  - 全球电网投资到2030年需接近翻倍至每年超过6000亿美元，至少3000GW可再生能源项目等待并网。
+  - 欧盟CBAM自2026年进入正式期，进口商需要申报隐含碳排放并购买、交出CBAM证书。
+counter_evidence:
+  - 能源设备出口可能陷入价格竞争和毛利压缩。
+  - 关税、反补贴、本地化要求和认证规则可能削弱纯出口模式。
+  - 海外项目的客户关系可能由当地公用事业公司、EPC或渠道商控制。
+  - 当前证据还不能证明海外客户续约、软件绑定、运维收入或高切换成本。
+linked_insights:
+  - insights/examples/energy-export-shifts-to-systems.md
+linked_metrics:
+  - energy_equipment_export_orders
+  - overseas_grid_capex
+  - trade_barrier_policy
+  - overseas_om_network
+  - export_customer_dependency
+  - green_power_accounting
+next_action: 跟踪海外订单价格、毛利、库存、海外运维服务收入、EMS/VPP软件绑定、绿电/碳足迹核算案例和客户续约证据。
+```
