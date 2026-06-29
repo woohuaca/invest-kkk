@@ -26,6 +26,7 @@
 | P1 | VPP 控制权复核 | demand_response / storage_utilization / market_volatility | 电力市场报告、地方 VPP 试点、需求响应案例 | active | 区分理论调节能力、签约容量和实际调用收益 |
 | P1 | 充电设施负荷与车网互动 | charging_load_growth / local_load_growth / demand_response / grid_connection_delay | 国家能源局、地方充电设施数据、VPP 试点 | active | 区分设施规模、实际充放电量、V2G 响应能力和调度收益 |
 | P1 | 绿证与非化石电力消费核算 | green_power_accounting / data_feedback_loop / customer_switching_cost | 国家能源局、绿证交易平台、企业绿电采购案例 | active | 观察企业侧是否形成合规、采购、用电数据一体化工作流依赖 |
+| P1 | 能源出口与绿色属性出海 | energy_equipment_export_orders / overseas_grid_capex / trade_barrier_policy / export_customer_dependency / green_power_accounting | 海关总署、商务部、IEA、海外电网投资、企业海外项目案例 | active | 区分设备出口、项目出口、系统出口和绿色属性出口，优先验证海外运维、软件和合规工作流 |
 | P1 | 配网瓶颈复核 | grid_connection_delay / local_load_growth / congestion | 12398 通报、地方监管办、配网改造信息 | active | 跟踪低电压、台区承载力、新能源接入受限案例是否持续 |
 | P2 | 数据中心组织依赖 | data_center_load_growth / customer_switching_cost / data_feedback_loop | 国家能源局、数据中心政策、客户案例 | open | 寻找客户工作流依赖、需求响应履约和数据反馈证据 |
 
@@ -37,6 +38,8 @@
 - 如果 VPP 只有理论调节容量、缺少实际调用收益，不上调 VPP 或 EMS 的组织依赖评分。
 - 如果充电设施和充放电电量高增，但缺少实际放电响应和收益数据，只增强配网/VPP 观察权重，不直接提高组织依赖判断。
 - 如果绿证核算开始嵌入企业合规、采购和用电数据工作流，更新 `green_power_accounting`、`data_feedback_loop` 和 EMS / operations_knowledge 控制点。
+- 如果能源出口只体现为设备出货增长但价格、毛利和服务收入承压，不上调控制权判断。
+- 如果海外项目绑定 EMS/VPP、长期运维、绿电核算或客户合规流程，更新 `export_customer_dependency` 和能源出口控制点候选。
 - 如果二级观察源出现强信号，先写入 `approved_with_limits`，再回溯一手数据源。
 
 ## Review Gate

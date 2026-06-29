@@ -135,3 +135,34 @@ evidence_gap:
 confidence: medium
 next_action: 跟踪数据中心需求响应案例、绿电交易和算力负荷调度数据。
 ```
+
+## Candidate: energy-export-system
+
+```yaml
+candidate:
+  layer: export_system
+  asset_type: 海外能源系统交付、运维与绿色属性核算能力
+  control_point: 能源出口如果从设备销售上移到海外项目、EMS/VPP、长期运维和绿色属性核算，可能控制海外客户的能源系统工作流。
+score:
+  complexity_control: 4
+  bottleneck_power: 3
+  pricing_power: 3
+  data_advantage: 4
+  organizational_dependency: 4
+  supply_response_lag: 3
+  durability: 3
+evidence:
+  - 能源设备与服务已被识别为技术变化期可能获得阶段性瓶颈收益的环节。
+  - 绿证交易与非化石能源电力消费责任权重衔接，提示绿色属性和能源数据可能进入企业采购与合规流程。
+  - 海外客户如果需要光伏、储能、充电、EMS、运维和绿色属性核算的一体化方案，价值可能从一次性设备销售上移到系统和组织层。
+counter_evidence:
+  - 能源设备出口可能陷入价格竞争，出口额增长不等于利润和控制权。
+  - 贸易壁垒、本地化要求和海外认证可能削弱单纯出口模式。
+  - 海外项目可能由当地 EPC、公用事业公司或渠道商控制客户关系。
+evidence_gap:
+  - 需要验证海外订单价格、毛利、库存和渠道质量。
+  - 需要验证海外运维服务收入、续约、软件绑定和备件网络。
+  - 需要验证绿色属性核算是否进入出口企业高频工作流。
+confidence: low
+next_action: 跟踪 energy_equipment_export_orders、overseas_grid_capex、trade_barrier_policy、overseas_om_network、export_customer_dependency 和 green_power_accounting。
+```
