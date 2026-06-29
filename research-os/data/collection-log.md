@@ -208,3 +208,80 @@ confidence: high
 impact: grid_connection_delay、local_load_growth 和 congestion 提示配网承载力仍可能成为分布式新能源、充电桩和工商业用能的局部瓶颈。
 next_action: 跟踪低电压、台区承载力、新能源接入受限案例是否持续，并判断是否强化 distribution 层控制点。
 ```
+
+## 2026-06-29
+
+```yaml
+signal:
+  title: 全国发电装机突破40亿千瓦但利用小时继续下降
+  source: 国家能源局 2026年1-5月份全国电力工业统计数据
+  source_url: https://www.nea.gov.cn/20260623/536f34aa643449749ab37af6c02a0254/c.html
+  date: '2026-06-23'
+  topic: power_market
+  layer: dispatch
+  fact: 截至2026年5月底，全国累计发电装机容量40.1亿千瓦，同比增长17.8%；太阳能发电装机12.7亿千瓦、同比增长24.4%，风电6.6亿千瓦、同比增长21.6%；1-5月全国发电设备累计平均利用1155小时、同比降低95小时。
+strength: strong
+confidence: high
+impact: renewable_penetration 与 capacity_utilization 同时增强，支持资源侧扩张快于有效利用、调度复杂性继续上升的观察。
+next_action: 更新 metrics/calculation-log.md，并在 energy-001 中同时记录高渗透支持证据和储能供给弹性反证。
+```
+
+```yaml
+signal:
+  title: 充电设施规模和充放电电量继续高增
+  source: 国家能源局 2026年5月全国电动汽车充电设施数据
+  source_url: https://www.nea.gov.cn/20260623/fd6b7ebd6f03404286ef8d13c4ce51fd/c.html
+  date: '2026-06-23'
+  topic: grid
+  layer: distribution
+  fact: 截至2026年5月底，全国充电设施数量2249.7万台、同比增长47.5%；公共充电设施总功率24200万千瓦、同比增长43.5%；私人充电设施接入容量15107.8万千伏安、同比增长48.3%；2026年5月全国充放电电量75.37亿千瓦时、同比增长46.4%。
+strength: strong
+confidence: high
+impact: charging_load_growth、local_load_growth、grid_connection_delay 和 demand_response 同时增强，提示充电负荷、车网互动和配网承载力会影响 VPP 与 distribution 控制点。
+next_action: 新增 charging_load_growth 指标，并在 VPP / EMS 候选中区分设施规模、实际充放电量和调度响应能力。
+```
+
+```yaml
+signal:
+  title: 新型能源体系试点明确2030年储能、VPP和车网互动目标
+  source: 国家能源局 新型能源体系建设第一批试点申报文件
+  source_url: https://www.nea.gov.cn/20260625/0ccfdc1674e84868b49480edf584eb5f/c.html
+  date: '2026-06-25'
+  topic: policy
+  layer: VPP
+  fact: 第一批试点申报文件提出到2030年全国发电总装机约54亿千瓦、非化石能源发电量占比50%左右，源网荷储协调互济资源配置能力较2025年提升40%以上，需求侧调节能力达到最大用电负荷5%以上，配电网具备约9亿千瓦分布式新能源接入能力，新型储能装机3亿千瓦以上，虚拟电厂容量5000万千瓦以上，车网互动响应能力5000万千瓦以上。
+strength: strong
+confidence: high
+impact: dispatch_market_reform、demand_response、storage_utilization、charging_load_growth 和 VPP 候选控制点证据增强，但仍需要实际调用收益和客户依赖验证。
+next_action: 更新 energy-002 和 energy-003，并将 VPP 目标从理论容量跟踪转向实际调用能力和收益稳定性。
+```
+
+```yaml
+signal:
+  title: 非公共电网常规水电纳入绿证核发数据链
+  source: 国家能源局 非公共电网存量常规水电项目绿证核发通知
+  source_url: https://www.nea.gov.cn/20260626/78be814353a74763a086e024c788422a/c.html
+  date: '2026-06-26'
+  topic: policy
+  layer: operations_knowledge
+  fact: 国家能源局要求相关项目在2026年7月31日前完成绿证账户创建或划转，并在2026年8月31日前提交2023年1月至2025年12月历史生产数据；符合条件的电量可自2023年1月1日起核发绿证。
+strength: medium
+confidence: high
+impact: green_power_accounting 和 data_feedback_loop 可能把发电数据、证书核发和用户侧核算连接为新的能源数据基础设施。
+next_action: 新增 green_power_accounting 指标，并观察绿证数据是否从政策报送走向企业常态化用能管理。
+```
+
+```yaml
+signal:
+  title: 绿证交易与非化石能源电力消费责任权重衔接
+  source: 国家能源局 进一步做好非化石能源电力消费与绿证衔接工作
+  source_url: https://www.nea.gov.cn/20260626/0cbab29ffce74340bf1f23b0fa8c8a50/c.html
+  date: '2026-06-26'
+  topic: policy
+  layer: EMS
+  fact: 文件明确从2026年开始，绿色电力证书交易可用于完成用户非化石能源消费责任权重，推动非化石能源电力消费和绿证核算衔接。
+strength: medium
+confidence: high
+impact: green_power_accounting、customer_switching_cost 和 data_feedback_loop 可能把企业绿电采购、合规核算和能源管理工作流连接起来。
+next_action: 观察企业侧是否出现合规、采购、用电数据一体化流程，以及该流程是否沉淀到 EMS 或 operations_knowledge 层。
+```
