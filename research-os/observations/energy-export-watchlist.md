@@ -17,7 +17,7 @@
 
 ```yaml
 source_refresh:
-  date: '2026-07-22'
+  date: '2026-07-26'
   sources:
     - name: IEA Energy Technology Perspectives 2026
       url: https://www.iea.org/reports/energy-technology-perspectives-2026/executive-summary
@@ -34,6 +34,7 @@ source_refresh:
     - name: SCIO equipment manufacturing export update
       url: https://english.scio.gov.cn/pressroom/2026-07/20/content_118608649.html
       read_through: 锂电池、风力发电机组和汽车等设备出口继续体现中国能源制造外溢能力。
+  conclusion_update: 上半年出口数据增强设备出口和制造外溢证据，但不改变 energy-004 置信度；下一步必须从出口额转向服务收入、软件绑定、客户续约和合规工作流。
 ```
 
 ## 优先级口径

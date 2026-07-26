@@ -330,3 +330,234 @@ confidence: high
 impact: trade_barrier_policy、green_power_accounting 和 export_customer_dependency 同时增强，提示出口企业需要把能源、碳、绿电和审计数据纳入合规工作流。
 next_action: 观察出口企业是否把绿电采购、碳足迹、证书、审计和能源管理系统连接为持续工作流。
 ```
+
+## 2026-06-30
+
+```yaml
+signal:
+  title: OT 指南更新把工业控制接入变成 EMS/VPP 前置约束
+  source: NIST SP 800-82 Rev.4 Initial Preliminary Draft Call for Comments
+  source_url: https://csrc.nist.gov/pubs/sp/800/82/r4/iprd
+  date: '2026-01-22'
+  topic: policy
+  layer: EMS
+  fact: NIST 启动 SP 800-82 Rev.4 预草案征求意见，修订方向包括反映 OT 威胁环境变化，纳入更新后的 OT 标准和实践，并扩展 AI/ML、数字孪生、边缘计算、云平台和 5G 等技术在 OT 环境中的指导。
+strength: medium
+confidence: high
+impact: industrial_control_integration 增强，说明 EMS/VPP 若要进入工业现场的闭环控制，需要同时处理 OT 安全、边缘响应、控制权限和新技术接入边界。
+next_action: 更新 energy-003、EMS/VPP 候选和跟进看板；后续用客户案例验证只读采集、优化建议和闭环控制权限的差异。
+```
+
+```yaml
+signal:
+  title: 公网暴露 OT 设备显示工业控制接入有显性安全成本
+  source: Analysis of Publicly Accessible Operational Technology and Associated Risks
+  source_url: https://arxiv.org/abs/2508.02375
+  date: '2025-08-04'
+  topic: cybersecurity
+  layer: operations_knowledge
+  fact: 研究基于公网扫描数据识别出 68,243 个 internet-facing OT 设备，覆盖 ModbusTCP、EtherNet/IP、S7 等工业协议，并指出部分设备暴露固件、厂商和版本信息，自动化截图分析还可发现 HMI 和 SCADA 图形界面。
+strength: medium
+confidence: medium
+impact: industrial_control_integration 增强，但更偏向反证边界：EMS/VPP 越接近闭环控制，越需要处理公网暴露、协议安全、身份认证、补丁窗口和分区隔离成本。
+next_action: 后续验证 EMS/VPP 项目是否通过边缘网关、分区隔离、最小权限和审计机制接入 OT，而不是直接暴露 PLC/HMI/SCADA。
+```
+
+## 2026-07-22
+
+```yaml
+signal:
+  title: 全国用电负荷创历史新高但尚未触发需求响应
+  source: 国家能源局 全国用电负荷首创历史新高 国家能源局多措并举全力保障电力供应平稳有序
+  source_url: https://obor.nea.gov.cn/detail2/23025.html
+  date: '2026-07-15'
+  topic: power_market
+  layer: dispatch
+  fact: 2026年7月10日，全国用电负荷达到15.18亿千瓦，较2025年7月17日历史极值15.08亿千瓦增加1000万千瓦，较7月初上涨超过1.5亿千瓦；华北、东北、西北、南方等4个区域和16个省份用电负荷累计59次创新高，各地均未出现需求响应和有序用电情况。
+strength: strong
+confidence: high
+impact: peak_load_pressure 增强，支持稳定容量、调度和跨区互济的重要性；但未触发需求响应和有序用电，暂不证明 VPP 已经获得实际调用收益。
+next_action: 新增 peak_load_pressure 指标，更新 energy-001 和 energy-002，并继续观察迎峰度夏期间是否出现需求响应、价格异常或局部停电。
+```
+
+```yaml
+signal:
+  title: 充换电和互联网数据服务用电继续高增
+  source: 国家能源局 2026年1-6月份全社会用电量同比增长5.3%
+  source_url: https://www.nea.gov.cn/20260715/ca1da417932c4fbfa26c0006f272d691/c.html
+  date: '2026-07-15'
+  topic: data_center
+  layer: distribution
+  fact: 2026年1-6月，全社会用电量累计50999亿千瓦时，同比增长5.3%；充换电服务业用电量810亿千瓦时，同比增长56.9%；互联网数据服务用电量494亿千瓦时，同比增长44.0%。2026年6月，充换电服务业和互联网数据服务用电量分别为148亿、91亿千瓦时，同比增速分别为57.1%、41.4%。
+strength: strong
+confidence: high
+impact: charging_load_growth 和 data_center_load_growth 同时增强，提示配网承载、算电协同、EMS 和 VPP 的研究权重继续提高。
+next_action: 更新 metrics/calculation-log.md、energy-003 和 EMS/VPP 候选；后续区分负荷增长、可调负荷比例和客户工作流依赖。
+```
+
+```yaml
+signal:
+  title: 电力市场交易电量高增但现货仍小于中长期交易
+  source: 国家能源局 2026年1-5月全国电力市场交易电量同比增长24.8%
+  source_url: https://www.nea.gov.cn/20260629/77ccaff0f2934369a7b94078165ceb54/c.html
+  date: '2026-06-29'
+  topic: power_market
+  layer: dispatch
+  fact: 2026年1-5月，全国累计完成电力市场交易电量30573亿千瓦时，同比增长24.8%；中长期交易电量26794亿千瓦时，现货交易电量3779亿千瓦时，绿电交易电量1364亿千瓦时，同比增长3.9%。
+strength: strong
+confidence: high
+impact: dispatch_market_reform 增强，说明市场化交易深度继续提高；但现货交易仍显著小于中长期交易，灵活性价值是否充分显性化仍需观察。
+next_action: 更新 energy-002 和 dispatch-layer 候选，后续跟踪现货交易占比、辅助服务收益和跨省跨区交易深度。
+```
+
+```yaml
+signal:
+  title: 风电企业不执行调度指令暴露控制权执行风险
+  source: 国家能源局12398能源监管热线6月投诉举报处理情况通报
+  source_url: https://www.nea.gov.cn/20260720/fa16ff39dc0d42e98753d4d9f678f674/c.html
+  date: '2026-07-20'
+  topic: dispatch
+  layer: dispatch
+  fact: 12398通报披露，江西群众举报某风力发电企业不执行电力调度指令。经核实，该企业自2026年3月以来未严格执行省级电力调度机构运行指令，擅自将风机改为人工控制，影响电网安全稳定运行；华中能源监管局已下发监管整改通知书、责令限期整改并通报批评。
+strength: strong
+confidence: high
+impact: dispatch_instruction_compliance 和 industrial_control_integration 同时增强，说明调度层控制权不只来自市场规则，也取决于并网主体是否让控制系统按调度指令执行。
+next_action: 新增 dispatch_instruction_compliance 指标，更新 energy-002、energy-003 和控制点候选；后续跟踪调度指令执行、AGC/AVC 投入和人工/自动控制边界。
+```
+
+```yaml
+signal:
+  title: 12398通报继续显示配网低电压和多次停电问题
+  source: 国家能源局12398能源监管热线6月投诉举报处理情况通报
+  source_url: https://www.nea.gov.cn/20260720/fa16ff39dc0d42e98753d4d9f678f674/c.html
+  date: '2026-07-20'
+  topic: grid
+  layer: distribution
+  fact: 2026年6月，12398热线平台接收投诉1980件，投诉热点包括部分地区电能质量不达标、台区多次停电和高峰时段低电压；典型案例显示海南海口某小区受高温天气影响用电负荷激增，供电线路在2天内发生4次故障停电。
+strength: medium
+confidence: high
+impact: grid_connection_delay、local_load_growth 和 peak_load_pressure 增强，说明局部配网仍是高温、充电负荷和分布式新能源下的薄弱环节。
+next_action: 更新 grid_connection_delay，并持续观察低电压、多次停电、充电桩报装和新能源并网投诉是否在高峰期重复出现。
+```
+
+```yaml
+signal:
+  title: 能源数据分级把实时控制指令和电力消费数据纳入安全边界
+  source: 国家能源局有关负责同志就《能源行业数据分类分级指南（2026年版）》答记者问
+  source_url: https://www.nea.gov.cn/20260630/2873fa450d2e4317b33d40285b5ed576/c.html
+  date: '2026-06-30'
+  topic: policy
+  layer: operations_knowledge
+  fact: 《能源行业数据分类分级指南（2026年版）》用于指导能源行业非密数据分类分级，识别重要数据和核心数据。国家能源局答记者问指出，重要能源设施遭到破坏或控制指令被篡改可能导致能源供应中断，部分重要能源设施精确地理坐标、实时控制指令以及能源消费类数据被列入重要数据和核心数据；1000万个及以上电力用户的电力消费原始数据为重要数据，1亿个及以上为核心数据。
+strength: strong
+confidence: high
+impact: data_feedback_loop、industrial_control_integration 和 customer_switching_cost 同时增强，说明能源数据闭环具有潜在控制权价值，也必须被数据安全制度约束。
+next_action: 更新 energy-003 和 EMS 候选；后续验证 EMS/VPP 是否能在合规边界内沉淀可复用数据反馈，而不是只增加数据合规成本。
+```
+
+```yaml
+signal:
+  title: 6月新增新能源项目以工商业分布式光伏为主
+  source: 国家能源局 关于2026年6月全国新增建档立卡新能源发电（不含户用光伏）项目情况的公告
+  source_url: https://www.nea.gov.cn/20260720/f978dbe5fcbc4d8085a3909410b9366e/c.html
+  date: '2026-07-20'
+  topic: grid
+  layer: distribution
+  fact: 2026年6月，全国新增建档立卡新能源发电项目3825个，其中风电项目32个，集中式光伏发电项目36个，工商业分布式光伏发电项目3751个，生物质发电项目6个；广东新增工商业分布式光伏项目1462个，江苏511个，浙江313个。
+strength: medium
+confidence: high
+impact: renewable_penetration、local_load_growth 和 green_power_accounting 增强，说明新增项目继续向工商业分布式侧集中，配网接入、绿证核发和企业能源管理复杂性上升。
+next_action: 更新 renewable_penetration，并观察工商业分布式光伏是否带来配网承载、反向潮流、绿证核算和 EMS 工作流依赖。
+```
+
+## 2026-07-26
+
+```yaml
+signal:
+  title: 全国用电负荷再创新高且跨区互济规模扩大
+  source: 全国煤炭交易中心转发国家能源局消息
+  source_url: https://www.ncexc.cn/c/2026-07-16/502663.shtml
+  date: '2026-07-15'
+  topic: power_market
+  layer: dispatch
+  fact: 2026年7月14日，全国用电负荷达到15.51亿千瓦，较7月10日15.18亿千瓦继续上行；7月14日跨省跨区跨网最大输送电力合计2.78亿千瓦，较7月10日2.63亿千瓦提高，各地未出现需求响应和有序用电情况。
+strength: strong
+confidence: medium
+impact: peak_load_pressure 和 dispatch_market_reform 增强，说明高峰负荷压力正在通过跨区互济和统一市场体系消化；但未触发需求响应，VPP实际收益仍不能上调。
+next_action: 更新 peak_load_pressure 和 dispatch-layer 证据，后续跟踪跨区输电、现货价差、辅助服务和需求响应触发。
+```
+
+```yaml
+signal:
+  title: 上半年发电装机突破40亿千瓦但利用小时继续下降
+  source: 国家能源局 2026年1-6月份全国电力统计数据
+  source_url: https://www.nea.gov.cn/20260722/3b678308556b4df0a574537b59a28731/c.html
+  date: '2026-07-22'
+  topic: power_market
+  layer: generation
+  fact: 截至2026年6月底，全国累计发电装机容量40.4亿千瓦，同比增长10.8%；太阳能发电装机容量12.7亿千瓦，同比增长15.8%；风电装机容量6.8亿千瓦，同比增长18.5%；1-6月份全国发电设备累计平均利用1392小时，比上年同期降低113小时。
+strength: strong
+confidence: high
+impact: renewable_penetration 和 capacity_utilization 同时增强，说明资源侧继续扩张，但有效利用与系统调度仍是关键约束。
+next_action: 更新 energy-001，并继续把装机、利用小时、峰值负荷和储能/VPP供给弹性放在同一链路判断。
+```
+
+```yaml
+signal:
+  title: 可再生能源十五五规划首次量化可靠替代目标
+  source: 国家发展改革委 《可再生能源发展“十五五”规划》答记者问
+  source_url: https://www.ndrc.gov.cn/xxgk/jd/jd/202607/t20260723_1406645.html
+  date: '2026-07-23'
+  topic: policy
+  layer: dispatch
+  fact: 规划提出到2030年可再生能源发电总装机达到35亿千瓦左右，年发电量达到6万亿千瓦时左右；风电和太阳能发电总装机达到28亿千瓦以上，年发电量达到4万亿千瓦时以上；全国风电光伏平均置信出力达到8%，迎峰度夏度冬晚高峰风电光伏电量占比达到20%以上，“十五五”期间新增可再生能源可靠顶峰发电能力3亿千瓦以上。
+strength: strong
+confidence: high
+impact: renewable_reliable_substitution 增强，说明政策关注点从装机规模上移到电量、容量支撑和系统调节能力，调度层和源网荷储协调的重要性提高。
+next_action: 新增 renewable_reliable_substitution 指标，并在 energy-001 和 energy-002 中同时记录支持证据和供给弹性反证。
+```
+
+```yaml
+signal:
+  title: 6月绿证核发交易规模扩大
+  source: 国家能源局 2026年6月全国可再生能源绿色电力证书核发及交易数据
+  source_url: https://www.nea.gov.cn/20260724/d35b8a39fb724572b3d3ce3cbed9d4e9/c.html
+  date: '2026-07-24'
+  topic: policy
+  layer: operations_knowledge
+  fact: 2026年6月，国家能源局核发绿证3.73亿个，其中可交易绿证2.06亿个；全国交易绿证8273万个，其中绿色电力交易绿证4289万个，单独交易绿证3984万个。
+strength: strong
+confidence: high
+impact: green_power_accounting 增强，绿证从核发口径进入交易口径，可能提高企业绿电采购、合规核算和能源数据工作流的重要性。
+next_action: 更新 green_power_accounting、energy-003 和 EMS/operations_knowledge 候选；后续观察绿证是否进入企业高频采购、审计和用电管理流程。
+```
+
+```yaml
+signal:
+  title: 中国绿证价格指数正式发布
+  source: 国家能源局 中国绿证价格指数
+  source_url: https://www.nea.gov.cn/20260724/808ea736bb9741909dd46f8cb32ea0de/c.html
+  date: '2026-07-24'
+  topic: policy
+  layer: operations_knowledge
+  fact: 2026年6月，中国绿证价格指数收于181.0点，以2025年1月为基期100点，环比下跌0.2%，同比上涨23.2%；指数由国家发展和改革委员会价格监测中心、国家能源局电力业务资质管理中心联合编制。
+strength: strong
+confidence: high
+impact: green_certificate_price_signal 增强，绿色属性开始具备连续、公开、可比较的价格观察口径。
+next_action: 新增 green_certificate_price_signal 指标，并跟踪企业绿证采购、核销、审计和碳足迹管理是否形成持续工作流。
+```
+
+```yaml
+signal:
+  title: 上半年能源制造相关出口继续高增
+  source: SCIO 2026 H1 China foreign trade briefing、Xinhua equipment manufacturing export update
+  source_url: https://english.scio.gov.cn/pressroom/2026-07/14/content_118603461.html
+  date: '2026-07-14'
+  topic: energy_export
+  layer: export_system
+  fact: 2026年上半年，中国机电产品出口9.36万亿元，同比增长20.1%，占出口总值63.5%；装备制造业出口交货值同比增长18.2%，其中锂电池、风力发电机组和汽车出口分别同比增长37.6%、35.6%和65.3%。
+strength: strong
+confidence: high
+impact: energy_equipment_export_orders 增强，说明能源制造外溢仍有规模和增速；但事实仍主要证明设备出口能力，不证明海外客户系统依赖。
+next_action: 更新 energy-004 和 energy-export-system 候选，但置信度不因出口额上升而上调；下一步必须验证服务收入、软件绑定、运维网络和客户续约。
+```

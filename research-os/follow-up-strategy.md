@@ -19,6 +19,8 @@
 | 优先级 | 跟进项 | 观察指标 | 来源 | 状态 | 下一次动作 |
 | --- | --- | --- | --- | --- | --- |
 | P0 | 第三周能源观察 | renewable_penetration / capacity_utilization / charging_load_growth / demand_response / green_power_accounting | 国家能源局 | done_2026-06-29 | 下周继续观察迎峰度夏负荷、5月全社会用电量、现货市场正式运行和绿证数据核算落地 |
+| P0 | 7月22日能源观察刷新 | peak_load_pressure / dispatch_market_reform / dispatch_instruction_compliance / data_center_load_growth / charging_load_growth / industrial_control_integration | 国家能源局、12398通报、能源数据分级指南 | done_2026-07-22 | 下一轮重点验证高峰负荷是否触发需求响应、调度指令违规是否重复出现、数据安全边界是否影响 EMS/VPP 数据闭环 |
+| P0 | 7月26日系统观察更新 | peak_load_pressure / renewable_penetration / capacity_utilization / renewable_reliable_substitution / green_power_accounting / green_certificate_price_signal | 国家能源局、国家发展改革委、中国绿证价格指数 | done_2026-07-26 | 下一轮重点验证负荷高峰是否传导到现货价差和辅助服务，可靠替代目标如何落地，以及绿证价格是否进入企业高频采购和合规工作流 |
 | P0 | 朗新能源「观价」连续观察 | day_ahead_realtime_spread / regional_price_divergence / market_volatility | 朗新能源研究院「观价」 | open | 连续观察至少两期，回溯交易中心或监管机构数据 |
 | P0 | 电池材料价格回溯 | battery_material_price_index / storage_cost_pressure / resource_cycle_rebound | Benchmark Mineral Intelligence / Visual Capitalist / 大宗商品数据源 | open | 验证锂、钴、镍、天然石墨价格是否持续回升 |
 | P0 | 储能供给弹性复核 | storage_cost_pressure / storage_utilization | 国家能源局、地方监管办、市场交易规则 | active | 将成本压力和利用小时放在同一链路判断，不单独使用材料价格 |
@@ -26,19 +28,28 @@
 | P1 | VPP 控制权复核 | demand_response / storage_utilization / market_volatility | 电力市场报告、地方 VPP 试点、需求响应案例 | active | 区分理论调节能力、签约容量和实际调用收益 |
 | P1 | 充电设施负荷与车网互动 | charging_load_growth / local_load_growth / demand_response / grid_connection_delay | 国家能源局、地方充电设施数据、VPP 试点 | active | 区分设施规模、实际充放电量、V2G 响应能力和调度收益 |
 | P1 | 绿证与非化石电力消费核算 | green_power_accounting / data_feedback_loop / customer_switching_cost | 国家能源局、绿证交易平台、企业绿电采购案例 | active | 观察企业侧是否形成合规、采购、用电数据一体化工作流依赖 |
+| P1 | 工业控制接入验证 | industrial_control_integration / customer_switching_cost / data_feedback_loop / demand_response | NIST/OT安全资料、OT暴露面研究、工业客户案例、VPP/EMS项目资料 | active | 区分只读采集、优化建议、人工执行和闭环控制权限，并验证安全分区、边缘网关和审计机制 |
 | P1 | 能源出口与绿色属性出海 | energy_equipment_export_orders / overseas_grid_capex / trade_barrier_policy / export_customer_dependency / green_power_accounting | 海关总署、商务部、IEA、海外电网投资、企业海外项目案例 | active | 区分设备出口、项目出口、系统出口和绿色属性出口，优先验证海外运维、软件和合规工作流 |
+| P1 | 能源出口 H1 数据刷新 | energy_equipment_export_orders / export_customer_dependency / overseas_om_network | SCIO、新华社、海关总署、企业海外订单披露 | done_2026-07-26 | 上半年出口高增只增强设备出口证据，下一步回溯海外服务收入、软件绑定、运维网络和客户续约 |
 | P1 | 配网瓶颈复核 | grid_connection_delay / local_load_growth / congestion | 12398 通报、地方监管办、配网改造信息 | active | 跟踪低电压、台区承载力、新能源接入受限案例是否持续 |
 | P2 | 数据中心组织依赖 | data_center_load_growth / customer_switching_cost / data_feedback_loop | 国家能源局、数据中心政策、客户案例 | open | 寻找客户工作流依赖、需求响应履约和数据反馈证据 |
 
 ## 触发规则
 
 - 如果官方数据验证新能源渗透率、现货市场或容量机制继续增强，更新 `energy-001` 或 `energy-002`。
+- 如果可再生能源可靠替代能力目标开始转化为实际置信出力、晚高峰出力、可靠顶峰能力或市场结算数据，同时更新 `energy-001` 的支持证据和反证条件。
 - 如果储能成本下降和利用率提升同时出现，降低稳定容量稀缺判断的置信度。
 - 如果电池材料价格回升且储能利用率没有同步改善，强化调度层和 VPP 的 `supply_response_lag`。
 - 如果 VPP 只有理论调节容量、缺少实际调用收益，不上调 VPP 或 EMS 的组织依赖评分。
+- 如果高峰负荷创新高但未触发需求响应或有序用电，只增强 `peak_load_pressure` 和调度观察，不直接提高 VPP 收益判断。
 - 如果充电设施和充放电电量高增，但缺少实际放电响应和收益数据，只增强配网/VPP 观察权重，不直接提高组织依赖判断。
 - 如果绿证核算开始嵌入企业合规、采购和用电数据工作流，更新 `green_power_accounting`、`data_feedback_loop` 和 EMS / operations_knowledge 控制点。
+- 如果中国绿证价格指数和交易量同步上升，并出现企业采购、核销、审计或碳足迹系统案例，更新 `green_certificate_price_signal`、`green_power_accounting` 和 EMS / operations_knowledge 控制点。
+- 如果 EMS/VPP 只能只读采集或给出优化建议，不能获得安全授权下的闭环控制权限，不上调组织依赖评分。
+- 如果 OT 接入带来公网暴露、认证薄弱或停线风险，先降低控制权判断，不把“接入设备多”直接等同于组织依赖。
+- 如果并网主体不执行调度指令或擅自改为人工控制，更新 `dispatch_instruction_compliance` 和 `industrial_control_integration`，并检查调度层控制权是否存在执行风险。
 - 如果能源出口只体现为设备出货增长但价格、毛利和服务收入承压，不上调控制权判断。
+- 如果能源出口数据只证明机电、锂电池、风电设备或汽车出口高增，但缺少服务收入、软件绑定和客户续约，不上调 `energy-004`。
 - 如果海外项目绑定 EMS/VPP、长期运维、绿电核算或客户合规流程，更新 `export_customer_dependency` 和能源出口控制点候选。
 - 如果二级观察源出现强信号，先写入 `approved_with_limits`，再回溯一手数据源。
 
